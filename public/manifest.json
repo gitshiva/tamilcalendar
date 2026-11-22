@@ -1,0 +1,16 @@
+{
+  "name": "தமிழ் காலண்டர் - Tamil Calendar",
+  "short_name": "TamilCal",
+  "description": "Authentic Tamil Panchangam, Thithi, Nakshatram and Moon Phase for the Global Tamil Community",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffbeb",
+  "theme_color": "#7c2d12",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
