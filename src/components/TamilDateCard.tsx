@@ -1,6 +1,6 @@
 import React from 'react';
 import { DailyPanchangam } from '../engine/tamilCalendar';
-import { Language, translations } from '../i18n/translations';
+import { Language } from '../i18n/translations';
 import { Calendar as CalendarIcon } from 'lucide-react';
 
 interface TamilDateCardProps {
@@ -9,7 +9,6 @@ interface TamilDateCardProps {
 }
 
 export const TamilDateCard: React.FC<TamilDateCardProps> = ({ panchangam, lang }) => {
-  const t = translations[lang];
   const { tamilYear, tamilMonth, tamilDate, weekday, gregorianFormatted } = panchangam;
 
   const yearDisplay = lang === 'ta' ? `${tamilYear.ta} வருடம்` : `${tamilYear.en} Year`;
