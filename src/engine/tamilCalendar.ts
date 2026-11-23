@@ -4,6 +4,8 @@ import {
   TAMIL_WEEKDAYS,
   THITHIS,
   NAKSHATRAS,
+  POURNAMI_ENTITY,
+  AMAVASAI_ENTITY,
   TamilEntity
 } from './constants';
 import {
@@ -73,9 +75,18 @@ export function calculatePanchangam(date: Date, lat = 13.0827, lon = 80.2707): D
     ? { ta: 'சுக்கில பட்சம் (வளர்பிறை)', en: 'Shukla Paksha (Waxing)' }
     : { ta: 'கிருஷ்ண பட்சம் (தேய்பிறை)', en: 'Krishna Paksha (Waning)' };
 
-  // Map to 1-15 thithi entity
+  // Map to proper thithi entity:
+  // Thithi 15 in Shukla Paksha is strictly Pournami (Full Moon)
+  // Thithi 30 (15th of Krishna Paksha) is strictly Amavasai (New Moon)
   const normalizedThithiNum = thithiIndex <= 15 ? thithiIndex : thithiIndex - 15;
-  const thithiEntity = THITHIS[normalizedThithiNum - 1] || THITHIS[0];
+  let thithiEntity: TamilEntity;
+  if (thithiIndex === 15) {
+    thithiEntity = POURNAMI_ENTITY;
+  } else if (thithiIndex === 30) {
+    thithiEntity = AMAVASAI_ENTITY;
+  } else {
+    thithiEntity = THITHIS[normalizedThithiNum - 1] || THITHIS[0];
+  }
   const isPournamiOrAmavasai = thithiIndex === 15 || thithiIndex === 30;
 
   // 2. Nakshatra Calculation: Moon Nirayana / 13° 20' (13.3333°)
