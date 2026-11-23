@@ -109,10 +109,22 @@ export const THITHIS: TamilEntity[] = [
   { id: 'dashami', ta: 'தசமி', en: 'Dashami' },
   { id: 'ekadashi', ta: 'ஏகாதசி', en: 'Ekadashi' },
   { id: 'dwadashi', ta: 'துவாதசி', en: 'Dwadashi' },
-  { id: 'trayodashi', ta: 'திரயோதசி (பிரதோஷம்)', en: 'Trayodashi (Pradosham)' },
+  { id: 'trayodashi', ta: 'திரயோதசி', en: 'Trayodashi' },
   { id: 'chaturdashi', ta: 'சதுர்த்தசி', en: 'Chaturdashi' },
-  { id: 'pournami_amavasai', ta: 'பௌர்ணமி / அமாவாசை', en: 'Pournami / Amavasai' }
+  { id: 'pournami', ta: 'பௌர்ணமி', en: 'Pournami' }
 ];
+
+export const POURNAMI_ENTITY: TamilEntity = {
+  id: 'pournami',
+  ta: 'பௌர்ணமி',
+  en: 'Pournami'
+};
+
+export const AMAVASAI_ENTITY: TamilEntity = {
+  id: 'amavasai',
+  ta: 'அமாவாசை',
+  en: 'Amavasai'
+};
 
 // 27 Nakshatras (நட்சத்திரங்கள்)
 export const NAKSHATRAS: TamilEntity[] = [
